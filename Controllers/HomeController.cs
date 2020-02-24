@@ -26,5 +26,25 @@ namespace Kairos.Controllers
         {
             return View("Home");
         }
+        [HttpGet("shop")]
+        public IActionResult Shop()
+        {
+            return View();
+        }
+        [HttpGet("results")]
+        public IActionResult Results()
+        {
+            return View();
+        }
+        [HttpGet("shoppingcart")]
+        public IActionResult ShoppingCart()
+        {
+            return View();
+        }
+        [HttpGet("watch")]
+        public IActionResult ShowWatch()
+        {
+            return View();
+        }
     }
 }

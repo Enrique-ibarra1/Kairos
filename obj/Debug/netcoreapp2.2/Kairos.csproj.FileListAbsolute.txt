@@ -29,3 +29,7 @@ C:\Users\rique\projects\Kairos\obj\Debug\netcoreapp2.2\Kairos.csproj.CopyComplet
 C:\Users\rique\projects\Kairos\obj\Debug\netcoreapp2.2\Razor\Views\Login\Login.g.cshtml.cs
 C:\Users\rique\projects\Kairos\obj\Debug\netcoreapp2.2\Razor\Views\Login\Register.g.cshtml.cs
 C:\Users\rique\projects\Kairos\obj\Debug\netcoreapp2.2\Razor\Views\Home\Home.g.cshtml.cs
+C:\Users\rique\projects\Kairos\obj\Debug\netcoreapp2.2\Razor\Views\Home\Results.g.cshtml.cs
+C:\Users\rique\projects\Kairos\obj\Debug\netcoreapp2.2\Razor\Views\Home\Shop.g.cshtml.cs
+C:\Users\rique\projects\Kairos\obj\Debug\netcoreapp2.2\Razor\Views\Home\ShoppingCart.g.cshtml.cs
+C:\Users\rique\projects\Kairos\obj\Debug\netcoreapp2.2\Razor\Views\Home\ShowWatch.g.cshtml.cs
