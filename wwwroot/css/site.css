@@ -1,56 +1,124 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿
+* {
+  box-sizing: border-box;
+  background-color: #1b201a;
+  font-family: 'Carrois Gothic SC';
+  font-weight: bolder;
+  font-size: large;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+body{
+  background-color: #1b201a;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+a{
+  color: #287a71;
+  padding: 5px;
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+a:hover{
+  text-decoration: none;
+  color: #1b201a;
+  background-color: #287a71;
+  padding: 5px;
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+.nav-item{
+  margin: 0px 20px;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
+/* Position the image container (needed to position the left and right arrows) */
+.container {
   position: relative;
-  min-height: 100%;
+  background-color: #1b201a;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+/* Hide the images by default */
+.mySlides {
+  display: none;
 }
-.footer {
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
   position: absolute;
-  bottom: 0;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: #287a71;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: #1b201a;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #287a71;
+  font-size: 12px;
+
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.caption{
+  font-family: 'Carrois Gothic SC';
+  color: #287a71;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #1b201a;
+  padding: 2px 16px;
+  color: #287a71;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+  height: 50px;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
   width: 100%;
-  white-space: nowrap;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+}
+
+.demo.cursor{
+  max-height: 107px;;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
 }
