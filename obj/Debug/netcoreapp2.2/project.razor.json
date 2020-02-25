@@ -2981,6 +2981,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Home\\ShowWatch.cshtml",
+      "TargetPath": "Views\\Home\\ShowWatch.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -2991,6 +2996,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Home\\Shop.cshtml",
+      "TargetPath": "Views\\Home\\Shop.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Home\\Results.cshtml",
+      "TargetPath": "Views\\Home\\Results.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -2998,6 +3013,11 @@
     {
       "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Home\\ShoppingCart.cshtml",
+      "TargetPath": "Views\\Home\\ShoppingCart.cshtml",
       "FileKind": "mvc"
     },
     {
