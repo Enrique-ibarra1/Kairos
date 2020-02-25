@@ -52,7 +52,7 @@ namespace Kairos.Controllers
             }
             else 
             {
-                return View("Index");
+                return View("Register");
             }
         }
 
@@ -95,12 +95,33 @@ namespace Kairos.Controllers
                     return View("Login");
                 }
                 HttpContext.Session.SetInt32("UserId", dbUser.UserId);
-                return RedirectToAction("Success");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
                 return View("Login");
+            }          
+        }
+        [HttpGet("admin")]
+        public IActionResult Admin()
+        {
+            User userInDb = LoggedIn();
+            if(userInDb == null)
+            {
+                return RedirectToAction("Logout", "Login");
             }
+            if(userInDb.Email != "email@email.com")
+            {
+                return RedirectToAction("Logout", "Login");
+            }
+            return View();
+        }
+        [HttpPost("createwatch")]
+        public IActionResult CreateWatch(Watch formWatch)
+        {
+            dbContext.Watches.Add(formWatch);
+            dbContext.SaveChanges();
+            return RedirectToAction("Admin");
         }
     }
 }
