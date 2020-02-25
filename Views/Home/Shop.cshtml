@@ -161,3 +161,49 @@ function showSlides(n) {
 } 
 
 </script>
+
+@model List<Watch> 
+
+
+<nav>
+    <p class="nav-item"><a asp-action="PriceLowHigh" asp-controller="Home">Sort by Low to High Price</a></p>
+    <p class="nav-item"><a asp-action="PriceHighLow" asp-controller="Home">Sort Price High to Low</a></p>
+    <p class="nav-item"><a asp-action="ColorGold" asp-controller="Home">Sort By Color: Gold</a></p>
+    <p class="nav-item"><a asp-action="ColorBlack" asp-controller="Home">Sort By Color: Black</a></p>
+    <p class="nav-item"><a asp-action="ColorSilver" asp-controller="Home">Sort By Color: Silver</a></p>
+    <p class="nav-item"><a asp-action="ColorRoseGold" asp-controller="Home">Sort By Color: RoseGold</a></p>
+    <p class="nav-item"><a asp-action="FilterMens" asp-controller="Home">Mens Watches</a></p>
+    <p class="nav-item"><a asp-action="FilterWomens" asp-controller="Home">Womens Watches</a></p>
+    <p class="nav-item"><a asp-action="FilterUnisex" asp-controller="Home">Unisex Watches</a></p>
+    <p class="nav-item"><a asp-action="FilterSmall" asp-controller="Home">Small Watches</a></p>
+    <p class="nav-item"><a asp-action="FilterMedium" asp-controller="Home">Medium Watches</a></p>
+    <p class="nav-item"><a asp-action="FilterLarge" asp-controller="Home">Large Watches</a></p>
+    <p class="nav-item"><a asp-action="MaterialGold" asp-controller="Home">Gold Watches</a></p>
+    <p class="nav-item"><a asp-action="MaterialTitanium" asp-controller="Home">Titanium Watches</a></p>
+    <p class="nav-item"><a asp-action="MaterialStainlessSteel" asp-controller="Home">Stainless Steel Watches</a></p>
+    <p class="nav-item"><a asp-action="MaterialCarbonFiber" asp-controller="Home">Carbon Fiber Watches</a></p>
+    <p class="nav-item"><a asp-action="MaterialCeramic" asp-controller="Home">Ceramic Watches</a></p>
+    <p class="nav-item"><a asp-action="MaterialRubberSilicone" asp-controller="Home">Rubber/Silicone Watches</a></p>
+</nav>
+<div class="container">
+    @foreach ( var w in Model)
+    {
+        <div class="card" id="watchcard" style="width: 400px; height: 500px; display: inline;">
+            <div class="card-header">
+                <h3>@w.Name</h3>
+                <img src="~/images/@w.ImageUrl" style="width: 200px; height: 200px;">
+            </div>
+            <div class="card-body">
+                <h4>By @w.Company</h4>
+                <h5>$@w.Price</h5>
+                <p>@w.Description</p>
+            </div>
+            <div class="card-footer">
+                <p>@w.Material</p>
+                <p>@w.Gender</p>
+                <p>@w.Size</p>
+                <button type="submit" class="btn btn-success btn-small">Add to cart</button>
+            </div>
+        </div>
+    }
+</div>
