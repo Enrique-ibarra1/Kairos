@@ -3016,6 +3016,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Login\\Admin.cshtml",
+      "TargetPath": "Views\\Login\\Admin.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Home\\ShoppingCart.cshtml",
       "TargetPath": "Views\\Home\\ShoppingCart.cshtml",
       "FileKind": "mvc"

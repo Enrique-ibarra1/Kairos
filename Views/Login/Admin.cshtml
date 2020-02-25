@@ -1,0 +1,66 @@
+@model Watch
+<h1 class="text-center">Welcome Admin</h1>
+<h2 class="text-center">Add a new Watch to the Inventory Here</h2>
+
+<form asp-action="CreateWatch" asp-controller="Login" method="post" class="mx-auto col-5">
+    <div class="form-group">
+        <span asp-validation-for="Name"></span>
+        <label asp-for="Name">Watch Name</label>
+        <input asp-for="Name" class="form-control">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="Company"></span>
+        <label asp-for="Company">Watch Company</label>
+        <input asp-for="Company" class="form-control">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="Price"></span>
+        <label asp-for="Price">Watch Price</label>
+        <input type="number" asp-for="Price" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Watch color</label>
+        <select asp-for="Color">
+            <option value="Gold">Gold</option>
+            <option value="Silver">Silver</option>
+            <option value="Black">Black</option>
+            <option value="Rose Gold">Rose Gold</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Men/Women/Unisex</label>
+        <select asp-for="Gender">
+            <option value="Men">Men</option>
+            <option value="Women">Women</option>
+            <option value="Unisex">Unisex</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Watch Size</label>
+        <select asp-for="Size">
+            <option value="small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Watch Material</label>
+        <select asp-for="Material">
+            <option value="Gold">Gold</option>
+            <option value="Titanium">Titanium</option>
+            <option value="Stainless Steel">Stainless Steel</option>
+            <option value="Carbon Fiber">Carbon Fiber</option>
+            <option value="Ceramic">Ceramic</option>
+            <option value="Rubber/Silicone">Rubber/Silicone</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea asp-for="Description"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Image url: </label>
+        <input asp-for="ImageUrl">
+    </div>
+    <button type="submit" class="btn btn-dark">Add Watch</button>
+</form>
