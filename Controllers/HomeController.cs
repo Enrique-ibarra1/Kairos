@@ -29,7 +29,8 @@ namespace Kairos.Controllers
         [HttpGet("shop")]
         public IActionResult Shop()
         {
-            return View();
+            List<Watch> WatchInventory = dbContext.Watches.ToList();
+            return View(WatchInventory);
         }
         [HttpGet("results")]
         public IActionResult Results()
@@ -46,5 +47,6 @@ namespace Kairos.Controllers
         {
             return View();
         }
+        
     }
 }
