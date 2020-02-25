@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Kairos.csproj": {}
+    "C:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\kairos\\Kairos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Kairos.csproj": {
+    "C:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\kairos\\Kairos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Kairos.csproj",
+        "projectUniqueName": "C:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\kairos\\Kairos.csproj",
         "projectName": "Kairos",
-        "projectPath": "C:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Kairos.csproj",
+        "projectPath": "C:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\kairos\\Kairos.csproj",
         "packagesPath": "C:\\Users\\Jason\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\obj\\",
+        "outputPath": "C:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\kairos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
