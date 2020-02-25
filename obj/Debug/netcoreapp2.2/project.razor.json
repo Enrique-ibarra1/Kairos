@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Kairos.csproj",
+  "FilePath": "c:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Kairos.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -2961,68 +2961,68 @@
   "RootNamespace": "Kairos",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Home\\Home.cshtml",
-      "TargetPath": "Views\\Home\\Home.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Login\\Register.cshtml",
-      "TargetPath": "Views\\Login\\Register.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Login\\Login.cshtml",
-      "TargetPath": "Views\\Login\\Login.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Home\\ShowWatch.cshtml",
+      "FilePath": "c:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Views\\Home\\ShowWatch.cshtml",
       "TargetPath": "Views\\Home\\ShowWatch.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Views\\Home\\Home.cshtml",
+      "TargetPath": "Views\\Home\\Home.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Home\\Shop.cshtml",
-      "TargetPath": "Views\\Home\\Shop.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Home\\Results.cshtml",
-      "TargetPath": "Views\\Home\\Results.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\_ViewImports.cshtml",
+      "FilePath": "c:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "c:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Views\\Home\\Shop.cshtml",
+      "TargetPath": "Views\\Home\\Shop.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Home\\ShoppingCart.cshtml",
+      "FilePath": "c:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Views\\Shared\\_CookieConsentPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Views\\Home\\ShoppingCart.cshtml",
       "TargetPath": "Views\\Home\\ShoppingCart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\rique\\projects\\Kairos\\Views\\Shared\\_CookieConsentPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FilePath": "c:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Views\\Home\\Results.cshtml",
+      "TargetPath": "Views\\Home\\Results.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Views\\Login\\Register.cshtml",
+      "TargetPath": "Views\\Login\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Views\\Login\\Login.cshtml",
+      "TargetPath": "Views\\Login\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jason\\Desktop\\CodingDojo\\CSharp\\EntityFramework\\Kairos\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     }
   ],
