@@ -30,6 +30,7 @@ namespace Kairos.Controllers
         {
             return View("Home");
         }
+<<<<<<< HEAD
 
 // Pattybranch added these for the stripe: New Method to take in 2 parameters
         public IActionResult Charge(string stripeEmail, string stripeToken)
@@ -55,5 +56,27 @@ namespace Kairos.Controllers
         }
 
 
+=======
+        [HttpGet("shop")]
+        public IActionResult Shop()
+        {
+            return View();
+        }
+        [HttpGet("results")]
+        public IActionResult Results()
+        {
+            return View();
+        }
+        [HttpGet("shoppingcart")]
+        public IActionResult ShoppingCart()
+        {
+            return View();
+        }
+        [HttpGet("watch")]
+        public IActionResult ShowWatch()
+        {
+            return View();
+        }
+>>>>>>> aa945144e9a1e9f04a4f546b0b568afc514b6e86
     }
 }
