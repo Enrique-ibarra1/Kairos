@@ -42,10 +42,35 @@ namespace Kairos.Controllers
         {
             return View();
         }
-        [HttpGet("watch")]
-        public IActionResult ShowWatch()
+        [HttpGet("watch/{watchid}")]
+        public IActionResult ShowWatch(int watchID)
         {
             return View();
+        }
+        [HttpGet("addtocart{watchid}")]
+        public IActionResult AddToCart(int watchID)
+        {
+            Watch thisWatch = dbContext.Watches.FirstOrDefault(w => w.WatchId == watchID);
+            if(HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart") == null)
+            {
+                Console.WriteLine("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+                List<Watch> Cart = new List<Watch>();
+                Cart.Add(thisWatch);
+                HttpContext.Session.SetObjectAsJson("UserCart", Cart);
+                ViewBag.Cart = Cart;
+                return View("ShoppingCart", "Home");
+            }
+            else if(HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart") != null)
+            {
+                Console.WriteLine("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+                List<Watch> Cart = HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart");
+                Cart.Add(thisWatch);
+                HttpContext.Session.SetObjectAsJson("UserCart", Cart);
+                ViewBag.Cart = Cart;
+                return View("ShoppingCart", "Home");
+            }
+            Console.WriteLine("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+            return RedirectToAction("ShowWatch/{watchId}", "Home");
         }
         [HttpGet("lowhigh")]
         public IActionResult PriceLowHigh()
