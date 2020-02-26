@@ -8,5 +8,6 @@ namespace Kairos.Models
         public HomeContext(DbContextOptions options) : base(options){}
 
         public DbSet<User> Users {get; set;}
+        public DbSet<Watch> Watches {get;set;}
     }
 }

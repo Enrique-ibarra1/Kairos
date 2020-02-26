@@ -1,1 +1,209 @@
-<h1>This is the main shop page, where we'll have hot products</h1>
+
+
+    <nav class="navbar navbar-expand-sm  navbar-dark justify-content-center">
+        <!-- Links -->
+        <ul class="navbar-nav">
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+            <a class=" dropdown-toggle font-weight-bold" href="#" id="navbardrop" data-toggle="dropdown">
+            Price
+            </a>
+            <div class="dropdown-menu  font-weight-bold">
+                <a class="dropdown-item font-weight-bold" href="#">$0 - 50</a>
+                <a class="dropdown-item font-weight-bold" href="#">$51 - 100</a>
+                <a class="dropdown-item font-weight-bold" href="#">$100+</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class=" dropdown-toggle font-weight-bold" href="#" id="navbardrop" data-toggle="dropdown">
+            Color
+            </a>
+            <div class="dropdown-menu  font-weight-bold">
+                <a class="dropdown-item font-weight-bold" href="#">Gold</a>
+                <a class="dropdown-item font-weight-bold" href="#">Silver</a>
+                <a class="dropdown-item font-weight-bold" href="#">Black</a>
+                <a class="dropdown-item font-weight-bold" href="#">Rose Gold</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class=" dropdown-toggle font-weight-bold" href="#" id="navbardrop" data-toggle="dropdown">
+            Material
+            </a>
+            <div class="dropdown-menu ">
+                <a class="dropdown-item font-weight-bold" href="#">Gold</a>
+                <a class="dropdown-item font-weight-bold" href="#">Titanium</a>
+                <a class="dropdown-item font-weight-bold" href="#">Stainless Steel</a>
+                <a class="dropdown-item font-weight-bold" href="#">Carbon Fiber</a>
+                <a class="dropdown-item font-weight-bold" href="#">Ceramic</a>
+                <a class="dropdown-item font-weight-bold" href="#">Rubber/Silicone</a>
+            </div>
+        </li>
+
+            <li class="nav-item dropdown">
+            <a class=" dropdown-toggle font-weight-bold" href="#" id="navbardrop" data-toggle="dropdown">
+            Size
+            </a>
+            <div class="dropdown-menu ">
+                <a class="dropdown-item font-weight-bold" href="#">Small</a>
+                <a class="dropdown-item font-weight-bold" href="#">Medium</a>
+                <a class="dropdown-item font-weight-bold" href="#">Large</a>
+            </div>
+        </li>
+        </ul>
+    </nav>
+
+    <!-- Container for the image gallery -->
+
+<div class="container">
+
+<!-- Full-width images with number text -->
+    <div class="mySlides">
+        <div class="numbertext">1 / 6</div>
+            <img src="https://goldwallpapers.com/uploads/posts/watch-wallpaper-hd/watch_wallpaper_hd_001.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">2 / 6</div>
+            <img src="https://goldwallpapers.com/uploads/posts/watch-wallpaper-hd/watch_wallpaper_hd_002.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">3 / 6</div>
+            <img src="https://goldwallpapers.com/uploads/posts/watch-wallpaper-hd/watch_wallpaper_hd_004.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">4 / 6</div>
+            <img src="https://goldwallpapers.com/uploads/posts/watch-wallpaper-hd/watch_wallpaper_hd_005.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">5 / 6</div>
+            <img src="https://goldwallpapers.com/uploads/posts/watch-wallpaper-hd/watch_wallpaper_hd_007.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+        <div class="numbertext">6 / 6</div>
+        <img src="https://goldwallpapers.com/uploads/posts/watch-wallpaper-hd/watch_wallpaper_hd_010.jpg" style="width:100%">
+    </div>
+
+<!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+<!-- Image text -->
+    <div class="caption-container">
+        <p id="caption"></p>
+    </div>
+
+<!-- Thumbnail images -->
+    <div class="row mx-auto">
+        <div class="column">
+            <img class="demo cursor" src="https://goldwallpapers.com/uploads/posts/watch-wallpaper-hd/watch_wallpaper_hd_001.jpg" style="width:100%" onclick="currentSlide(1)" alt="Display Name">
+        </div>
+
+        <div class="column"> 
+            <img class="demo cursor" src="https://goldwallpapers.com/uploads/posts/watch-wallpaper-hd/watch_wallpaper_hd_002.jpg" style="width:100%" onclick="currentSlide(2)" alt="Display Name">
+        </div>
+
+
+        <div class="column">
+            <img class="demo cursor" src="https://goldwallpapers.com/uploads/posts/watch-wallpaper-hd/watch_wallpaper_hd_004.jpg" style="width:100%" onclick="currentSlide(3)" alt="Display Name">
+        </div>
+
+        <div class="column">
+            <img class="demo cursor" src="https://goldwallpapers.com/uploads/posts/watch-wallpaper-hd/watch_wallpaper_hd_005.jpg" style="width:100%" onclick="currentSlide(4)" alt="Display Name">
+        </div>
+
+        <div class="column">
+            <img class="demo cursor" src="https://goldwallpapers.com/uploads/posts/watch-wallpaper-hd/watch_wallpaper_hd_007.jpg" style="width:100%" onclick="currentSlide(5)" alt="Display Name">
+        </div> 
+
+        <div class="column">
+            <img class="demo cursor" src="https://goldwallpapers.com/uploads/posts/watch-wallpaper-hd/watch_wallpaper_hd_010.jpg" style="width:100%" onclick="currentSlide(6)" alt="Display Name">
+        </div>
+    </div>
+</div>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+// Next/previous controls
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+
+// Thumbnail image controls
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    
+    for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    }
+    
+    for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+} 
+
+</script>
+
+@model List<Watch> 
+<nav>
+    <p class="nav-item"><a asp-action="PriceLowHigh" asp-controller="Home">Sort by Low to High Price</a></p>
+    <p class="nav-item"><a asp-action="PriceHighLow" asp-controller="Home">Sort Price High to Low</a></p>
+    <p class="nav-item"><a asp-action="ColorGold" asp-controller="Home">Sort By Color: Gold</a></p>
+    <p class="nav-item"><a asp-action="ColorBlack" asp-controller="Home">Sort By Color: Black</a></p>
+    <p class="nav-item"><a asp-action="ColorSilver" asp-controller="Home">Sort By Color: Silver</a></p>
+    <p class="nav-item"><a asp-action="ColorRoseGold" asp-controller="Home">Sort By Color: RoseGold</a></p>
+    <p class="nav-item"><a asp-action="FilterMens" asp-controller="Home">Mens Watches</a></p>
+    <p class="nav-item"><a asp-action="FilterWomens" asp-controller="Home">Womens Watches</a></p>
+    <p class="nav-item"><a asp-action="FilterUnisex" asp-controller="Home">Unisex Watches</a></p>
+    <p class="nav-item"><a asp-action="FilterSmall" asp-controller="Home">Small Watches</a></p>
+    <p class="nav-item"><a asp-action="FilterMedium" asp-controller="Home">Medium Watches</a></p>
+    <p class="nav-item"><a asp-action="FilterLarge" asp-controller="Home">Large Watches</a></p>
+    <p class="nav-item"><a asp-action="MaterialGold" asp-controller="Home">Gold Watches</a></p>
+    <p class="nav-item"><a asp-action="MaterialTitanium" asp-controller="Home">Titanium Watches</a></p>
+    <p class="nav-item"><a asp-action="MaterialStainlessSteel" asp-controller="Home">Stainless Steel Watches</a></p>
+    <p class="nav-item"><a asp-action="MaterialCarbonFiber" asp-controller="Home">Carbon Fiber Watches</a></p>
+    <p class="nav-item"><a asp-action="MaterialCeramic" asp-controller="Home">Ceramic Watches</a></p>
+    <p class="nav-item"><a asp-action="MaterialRubberSilicone" asp-controller="Home">Rubber/Silicone Watches</a></p>
+</nav>
+<div class="container">
+    @foreach ( var w in Model)
+    {
+        <div class="card" id="watchcard" style="width: 400px; height: 500px; display: inline;">
+            <div class="card-header">
+                <h3>@w.Name</h3>
+                <img src="~/images/@w.ImageUrl" style="width: 200px; height: 200px;">
+            </div>
+            <div class="card-body">
+                <h4>By @w.Company</h4>
+                <h5>$@w.Price</h5>
+                <p>@w.Description</p>
+            </div>
+            <div class="card-footer">
+                <p>@w.Material</p>
+                <p>@w.Gender</p>
+                <p>@w.Size</p>
+                <button type="submit" class="btn btn-success btn-small">Add to cart</button>
+            </div>
+        </div>
+    }
+</div>
+

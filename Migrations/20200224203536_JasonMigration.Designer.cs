@@ -3,18 +3,20 @@ using System;
 using Kairos.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Kairos.Migrations
 {
     [DbContext(typeof(HomeContext))]
-    partial class HomeContextModelSnapshot : ModelSnapshot
+    [Migration("20200224203536_JasonMigration")]
+    partial class JasonMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Kairos.Models.User", b =>
@@ -41,38 +43,6 @@ namespace Kairos.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("Kairos.Models.Watch", b =>
-                {
-                    b.Property<int>("WatchId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Color");
-
-                    b.Property<string>("Company");
-
-                    b.Property<DateTime>("CreatedAt");
-
-                    b.Property<string>("Description");
-
-                    b.Property<string>("Gender");
-
-                    b.Property<string>("ImageUrl");
-
-                    b.Property<string>("Material");
-
-                    b.Property<string>("Name");
-
-                    b.Property<double>("Price");
-
-                    b.Property<string>("Size");
-
-                    b.Property<DateTime>("UpdatedAt");
-
-                    b.HasKey("WatchId");
-
-                    b.ToTable("Watches");
                 });
 #pragma warning restore 612, 618
         }
