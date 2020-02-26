@@ -40,6 +40,12 @@ namespace Kairos.Controllers
         [HttpGet("shoppingcart")]
         public IActionResult ShoppingCart()
         {
+            if(HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart") != null)
+            {
+                List<Watch> Cart = HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart");
+                ViewBag.Cart = Cart;
+                return View("ShoppingCart", Cart);
+            }
             return View();
         }
         [HttpGet("watch/{watchid}")]
@@ -47,7 +53,7 @@ namespace Kairos.Controllers
         {
             return View();
         }
-        [HttpGet("addtocart{watchid}")]
+        [HttpGet("addtocart/{watchid}")]
         public IActionResult AddToCart(int watchID)
         {
             Watch thisWatch = dbContext.Watches.FirstOrDefault(w => w.WatchId == watchID);
@@ -58,7 +64,7 @@ namespace Kairos.Controllers
                 Cart.Add(thisWatch);
                 HttpContext.Session.SetObjectAsJson("UserCart", Cart);
                 ViewBag.Cart = Cart;
-                return View("ShoppingCart", "Home");
+                return RedirectToAction("ShoppingCart", "Home");
             }
             else if(HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart") != null)
             {
@@ -67,10 +73,10 @@ namespace Kairos.Controllers
                 Cart.Add(thisWatch);
                 HttpContext.Session.SetObjectAsJson("UserCart", Cart);
                 ViewBag.Cart = Cart;
-                return View("ShoppingCart", "Home");
+                return RedirectToAction("ShoppingCart", "Home");
             }
             Console.WriteLine("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-            return RedirectToAction("ShowWatch/{watchId}", "Home");
+            return View("ShowWatch/{watchId}", "Home");
         }
         [HttpGet("lowhigh")]
         public IActionResult PriceLowHigh()
