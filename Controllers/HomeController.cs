@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Kairos.Models;
+
+// pattybranch added the below using statement
+
+
 namespace Kairos.Controllers
 {
     public class HomeController : Controller
@@ -26,6 +30,31 @@ namespace Kairos.Controllers
         {
             return View("Home");
         }
+
+// Pattybranch added these for the stripe: New Method to take in 2 parameters
+        public IActionResult Charge(string stripeEmail, string stripeToken)
+        {
+            // var customerService = new StripeCustomerService();
+            // var chargeService = new StripeChargeService();
+
+            // var customer = customerService.Create(new StripeCustomerCreateOptions 
+            // {
+            //     EmailTokenProvider = stripeEmail,
+            //     SourceToken = stripeToken
+            // });
+
+            // var charge = chargeService.Create(new StripeChargeCreateOptions 
+            // {
+            //     Amount = 500, 
+            //     MonitoringDescriptionAttribute = "",
+            //     Currency = "usd",
+            //     CustomerTaxIdDataOptions = customer.Id
+            // });
+
+            return View();
+        }
+
+
         [HttpGet("shop")]
         public IActionResult Shop()
         {
@@ -40,12 +69,43 @@ namespace Kairos.Controllers
         [HttpGet("shoppingcart")]
         public IActionResult ShoppingCart()
         {
+            if(HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart") != null)
+            {
+                List<Watch> Cart = HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart");
+                ViewBag.Cart = Cart;
+                return View("ShoppingCart", Cart);
+            }
             return View();
         }
-        [HttpGet("watch")]
-        public IActionResult ShowWatch()
+        [HttpGet("watch/{watchid}")]
+        public IActionResult ShowWatch(int watchID)
         {
-            return View();
+            return View("SHOW");
+        }
+        [HttpGet("addtocart/{watchid}")]
+        public IActionResult AddToCart(int watchID)
+        {
+            Watch thisWatch = dbContext.Watches.FirstOrDefault(w => w.WatchId == watchID);
+            if(HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart") == null)
+            {
+                Console.WriteLine("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+                List<Watch> Cart = new List<Watch>();
+                Cart.Add(thisWatch);
+                HttpContext.Session.SetObjectAsJson("UserCart", Cart);
+                ViewBag.Cart = Cart;
+                return RedirectToAction("ShoppingCart", "Home");
+            }
+            else if(HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart") != null)
+            {
+                Console.WriteLine("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+                List<Watch> Cart = HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart");
+                Cart.Add(thisWatch);
+                HttpContext.Session.SetObjectAsJson("UserCart", Cart);
+                ViewBag.Cart = Cart;
+                return RedirectToAction("ShoppingCart", "Home");
+            }
+            Console.WriteLine("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+            return View("ShowWatch/{watchId}", "Home");
         }
         [HttpGet("lowhigh")]
         public IActionResult PriceLowHigh()

@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+// Pattybranch added the line below for Stripe 
+using Stripe;
 
 namespace Kairos
 {
@@ -35,11 +37,19 @@ namespace Kairos
             services.AddDbContext<HomeContext>(options => options.UseMySql(Configuration["DBInfo:ConnectionString"]));
             services.AddSession(options => options.Cookie.IsEssential=true);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            // Below line added by Pattybranch
+            services.Configure <StripeSetting> (Configuration.GetSection("Stripe"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // Pattybranch added the line below for setting the API key of our stripe config to 
+            // pull the Api Keys that was set in the appsetting.json file
+            StripeConfiguration.SetApiKey(Configuration.GetSection("Stripe")["sk_test_SlxRdZep8tigRKQ6cl88d9G500MDGjzx8C"]);
+
+            // Pattybranch created a new class called "StripeSetting"
+            // It will hold the secret key and the publishable key
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
