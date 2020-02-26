@@ -1,4 +1,6 @@
 
+<img src="~/images/banner.jpg" class="banner" alt="Banner not available">
+
 @model List<Watch>
 <h1 style="color: #841a15;">Shop Page</h1>
 
@@ -67,7 +69,7 @@
     </nav>
 
 <!-- Container for the image gallery -->
-<div class="container">
+<div class="container"
 
 <!-- Full-width images with number text -->
     <div class="mySlides">
@@ -176,10 +178,10 @@ function showSlides(n) {
 <div class="container">
     @foreach ( var w in Model)
     {
-        <div class="card" id="watchcard" style="width: 400px; height: 500px; display: inline;">
+        <div class="card watchcard">
             <div class="card-header">
                 <h3>@w.Name</h3>
-                <img src="~/images/@w.ImageUrl" style="width: 200px; height: 200px;">
+                <img src="~/images/@w.ImageUrl">
             </div>
             <div class="card-body">
                 <h4>By @w.Company</h4>

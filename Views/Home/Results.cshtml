@@ -1,5 +1,7 @@
 @model List<Watch> 
 
+<img src="~/images/banner.jpg" class="banner" alt="Banner not available">
+
 <h1 style="color: #841a15;">Results Page</h1>
 
     <nav class="navbar navbar-expand-sm navbar-dark justify-content-center">
@@ -69,10 +71,10 @@
 <div class="container">
     @foreach ( var w in ViewBag.Results)
     {
-        <div class="card" id="watchcard" style="width: 400px; height: 500px; display: inline;">
+        <div class="card" id="watchcard" style="display: inline;">
             <div class="card-header">
                 <h3>@w.Name</h3>
-                <img src="~/images/@w.ImageUrl" style="width: 200px; height: 200px;">
+                <img src="~/images/@w.ImageUrl">
             </div>
             <div class="card-body">
                 <h4>By @w.Company</h4>

@@ -11,6 +11,27 @@ body{
   background-color: #1b201a;
 }
 
+.banner{
+  max-width: 1110px;
+  display: flex;
+}
+
+label{
+  color: #f2ce80;
+}
+
+select{
+  color: #841a15;
+}
+
+h1{
+  color: #841a15;
+}
+
+h2{
+  color: #f2ce80;
+}
+
 a{
   color: #287a71;
   padding: 5px;
@@ -102,24 +123,29 @@ a:hover{
 .numbertext {
   color: #287a71;
   font-size: 12px;
-
   padding: 8px 12px;
   position: absolute;
   top: 0;
 }
 
 .card-header{
-  box-shadow: 2px, 5px, 10px #f2ce80;
-  border: 2px, 5px, 10px#f2ce80;
+  background-color: #1b201a;
 }
 
 .card{
   color:#f2ce80;
-  box-shadow: 2px, 5px #f2ce80;
+  display: inline-block;
+  max-width: 355px;
+  max-height: 500px;
+}
+
+.card img {
+  width:100%;
 }
 
 .card-footer{
   color:#f2ce80;
+  background-color: #1b201a;
 }
 
 .caption{
@@ -132,6 +158,14 @@ a:hover{
   font-weight: bold;
   border: 1px solid #841a15;
   border-radius: 0;
+}
+
+.btn{
+  color:  #287a71;
+  font-weight: bold;
+  border: 1px solid #841a15;
+  border-radius: 0;
+  background-color: none;
 }
 
 /* Container for image text */
@@ -152,7 +186,7 @@ a:hover{
 .column {
   float: left;
   width: 16.66%;
-  height: 50px;
+  height: 150px;
 }
 
 /* Add a transparency effect for thumnbail images */
