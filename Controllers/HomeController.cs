@@ -30,33 +30,31 @@ namespace Kairos.Controllers
         {
             return View("Home");
         }
-<<<<<<< HEAD
 
 // Pattybranch added these for the stripe: New Method to take in 2 parameters
         public IActionResult Charge(string stripeEmail, string stripeToken)
         {
-            var customerService = new StripeCustomerService();
-            var chargeService = new StripeChargeService();
+            // var customerService = new StripeCustomerService();
+            // var chargeService = new StripeChargeService();
 
-            var customer = customerService.Create(new StripeCustomerCreateOptions 
-            {
-                EmailTokenProvider = stripeEmail,
-                SourceToken = stripeToken
-            });
+            // var customer = customerService.Create(new StripeCustomerCreateOptions 
+            // {
+            //     EmailTokenProvider = stripeEmail,
+            //     SourceToken = stripeToken
+            // });
 
-            var charge = chargeService.Create(new StripeChargeCreateOptions 
-            {
-                Amount = 500, 
-                MonitoringDescriptionAttribute = "",
-                Currency = "usd",
-                CustomerTaxIdDataOptions = customer.Id
-            });
+            // var charge = chargeService.Create(new StripeChargeCreateOptions 
+            // {
+            //     Amount = 500, 
+            //     MonitoringDescriptionAttribute = "",
+            //     Currency = "usd",
+            //     CustomerTaxIdDataOptions = customer.Id
+            // });
 
             return View();
         }
 
 
-=======
         [HttpGet("shop")]
         public IActionResult Shop()
         {
@@ -75,8 +73,7 @@ namespace Kairos.Controllers
         [HttpGet("watch")]
         public IActionResult ShowWatch()
         {
-            return View();
+            return View("SHOW");
         }
->>>>>>> aa945144e9a1e9f04a4f546b0b568afc514b6e86
     }
 }
