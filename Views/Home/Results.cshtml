@@ -23,7 +23,7 @@
 <div class="container">
     @foreach ( var w in ViewBag.Results)
     {
-        <div class="card" id="watchcard" style="width: 400px; height: 500px; display: inline;">
+        <div class="card" id="watchcard" >
             <div class="card-header">
                 <h3>@w.Name</h3>
                 <img src="~/images/@w.ImageUrl" style="width: 200px; height: 200px;">
@@ -38,7 +38,9 @@
                 <p>@w.Material</p>
                 <p>@w.Gender</p>
                 <p>@w.Size</p>
-                <button type="submit" class="btn btn-success btn-small">Add to cart</button>
+                <a asp-action="AddToCart" asp-controller="Home" asp-route-watchId="@w.WatchId">
+                    <button type="submit" class="btn btn-success btn-small">Add to cart</button>
+                </a>
             </div>
         </div>
     }
