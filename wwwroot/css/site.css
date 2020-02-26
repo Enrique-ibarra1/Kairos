@@ -23,6 +23,31 @@ a:hover{
   padding: 5px;
 }
 
+.dropdown-item{
+  text-align: center;
+  background-color: #1b201a;
+  padding: 2px 16px;
+  color: #287a71;
+}
+
+.dropdown-menu{
+  text-align: center;
+  background-color: #1b201a;
+  padding: 2px 16px;
+  color: #287a71;
+}
+
+.dropdown-menu:hover{
+  text-decoration: none;
+  color: #1b201a;
+}
+
+.dropdown-item:hover{
+  text-decoration: none;
+  color: #1b201a;
+  background-color: #287a71;
+}
+
 .nav-item{
   margin: 0px 20px;
 }
@@ -31,6 +56,7 @@ a:hover{
 .container {
   position: relative;
   background-color: #1b201a;
+  border: 1px solid  #f2ce80;
 }
 
 /* Hide the images by default */
@@ -82,9 +108,30 @@ a:hover{
   top: 0;
 }
 
+.card-header{
+  box-shadow: 2px, 5px, 10px #f2ce80;
+  border: 2px, 5px, 10px#f2ce80;
+}
+
+.card{
+  color:#f2ce80;
+  box-shadow: 2px, 5px #f2ce80;
+}
+
+.card-footer{
+  color:#f2ce80;
+}
+
 .caption{
   font-family: 'Carrois Gothic SC';
   color: #287a71;
+}
+
+.btn-small{
+  color:  #287a71;
+  font-weight: bold;
+  border: 1px solid #841a15;
+  border-radius: 0;
 }
 
 /* Container for image text */

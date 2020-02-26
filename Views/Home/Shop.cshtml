@@ -1,17 +1,29 @@
 
+@model List<Watch>
+<h1 style="color: #841a15;">Shop Page</h1>
 
-    <nav class="navbar navbar-expand-sm  navbar-dark justify-content-center">
+    <nav class="navbar navbar-expand-sm navbar-dark justify-content-center">
         <!-- Links -->
         <ul class="navbar-nav">
         <!-- Dropdown -->
         <li class="nav-item dropdown">
             <a class=" dropdown-toggle font-weight-bold" href="#" id="navbardrop" data-toggle="dropdown">
+            Style
+            </a>
+            <div class="dropdown-menu  font-weight-bold">
+                <a class="dropdown-item font-weight-bold" asp-controller="Home" asp-action="FilterMens">Mens</a>
+                <a class="dropdown-item font-weight-bold" asp-controller="Home" asp-action="FilterWomens">Womens</a>
+                <a class="dropdown-item font-weight-bold" asp-controller="Home" asp-action="FilterUnisex">Unisex</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class=" dropdown-toggle font-weight-bold" href="#" id="navbardrop" data-toggle="dropdown">
             Price
             </a>
             <div class="dropdown-menu  font-weight-bold">
-                <a class="dropdown-item font-weight-bold" href="#">$0 - 50</a>
-                <a class="dropdown-item font-weight-bold" href="#">$51 - 100</a>
-                <a class="dropdown-item font-weight-bold" href="#">$100+</a>
+                <a class="dropdown-item font-weight-bold" asp-controller="Home" asp-action="PriceLowHigh">Lowest to Highest</a>
+                <a class="dropdown-item font-weight-bold" asp-controller="Home" asp-action="PriceHighLow">Highest to Lowest</a>
             </div>
         </li>
 
@@ -20,10 +32,10 @@
             Color
             </a>
             <div class="dropdown-menu  font-weight-bold">
-                <a class="dropdown-item font-weight-bold" href="#">Gold</a>
-                <a class="dropdown-item font-weight-bold" href="#">Silver</a>
-                <a class="dropdown-item font-weight-bold" href="#">Black</a>
-                <a class="dropdown-item font-weight-bold" href="#">Rose Gold</a>
+                <a class="dropdown-item font-weight-bold" asp-action="ColorGold" asp-controller="Home">Gold</a>
+                <a class="dropdown-item font-weight-bold" asp-action="ColorSilver" asp-controller="Home">Silver</a>
+                <a class="dropdown-item font-weight-bold" asp-action="ColorBlack" asp-controller="Home">Black</a>
+                <a class="dropdown-item font-weight-bold" asp-action="ColorRoseGold" asp-controller="Home">Rose Gold</a>
             </div>
         </li>
 
@@ -32,12 +44,12 @@
             Material
             </a>
             <div class="dropdown-menu ">
-                <a class="dropdown-item font-weight-bold" href="#">Gold</a>
-                <a class="dropdown-item font-weight-bold" href="#">Titanium</a>
-                <a class="dropdown-item font-weight-bold" href="#">Stainless Steel</a>
-                <a class="dropdown-item font-weight-bold" href="#">Carbon Fiber</a>
-                <a class="dropdown-item font-weight-bold" href="#">Ceramic</a>
-                <a class="dropdown-item font-weight-bold" href="#">Rubber/Silicone</a>
+                <a class="dropdown-item font-weight-bold" asp-action="MaterialGold" asp-controller="Home">Gold</a>
+                <a class="dropdown-item font-weight-bold" asp-action="MaterialTitanium" asp-controller="Home">Titanium</a>
+                <a class="dropdown-item font-weight-bold" asp-action="MaterialStainlessSteel" asp-controller="Home">Stainless Steel</a>
+                <a class="dropdown-item font-weight-bold" asp-action="MaterialCarbonFiber" asp-controller="Home">Carbon Fiber</a>
+                <a class="dropdown-item font-weight-bold" asp-action="MaterialCeramic" asp-controller="Home">Ceramic</a>
+                <a class="dropdown-item font-weight-bold" asp-action="MaterialRubberSilicone" asp-controller="Home">Rubber/Silicone</a>
             </div>
         </li>
 
@@ -46,16 +58,15 @@
             Size
             </a>
             <div class="dropdown-menu ">
-                <a class="dropdown-item font-weight-bold" href="#">Small</a>
-                <a class="dropdown-item font-weight-bold" href="#">Medium</a>
-                <a class="dropdown-item font-weight-bold" href="#">Large</a>
+                <a class="dropdown-item font-weight-bold" asp-controller="Home">Small</a>
+                <a class="dropdown-item font-weight-bold" asp-controller="Home">Medium</a>
+                <a class="dropdown-item font-weight-bold" asp-controller="Home">Large</a>
             </div>
         </li>
         </ul>
     </nav>
 
-    <!-- Container for the image gallery -->
-
+<!-- Container for the image gallery -->
 <div class="container">
 
 <!-- Full-width images with number text -->
@@ -108,7 +119,6 @@
             <img class="demo cursor" src="https://goldwallpapers.com/uploads/posts/watch-wallpaper-hd/watch_wallpaper_hd_002.jpg" style="width:100%" onclick="currentSlide(2)" alt="Display Name">
         </div>
 
-
         <div class="column">
             <img class="demo cursor" src="https://goldwallpapers.com/uploads/posts/watch-wallpaper-hd/watch_wallpaper_hd_004.jpg" style="width:100%" onclick="currentSlide(3)" alt="Display Name">
         </div>
@@ -126,6 +136,7 @@
         </div>
     </div>
 </div>
+
 
 <script>
     var slideIndex = 1;
@@ -160,30 +171,8 @@ function showSlides(n) {
     dots[slideIndex-1].className += " active";
     captionText.innerHTML = dots[slideIndex-1].alt;
 } 
-
 </script>
 
-@model List<Watch> 
-<nav>
-    <p class="nav-item"><a asp-action="PriceLowHigh" asp-controller="Home">Sort by Low to High Price</a></p>
-    <p class="nav-item"><a asp-action="PriceHighLow" asp-controller="Home">Sort Price High to Low</a></p>
-    <p class="nav-item"><a asp-action="ColorGold" asp-controller="Home">Sort By Color: Gold</a></p>
-    <p class="nav-item"><a asp-action="ColorBlack" asp-controller="Home">Sort By Color: Black</a></p>
-    <p class="nav-item"><a asp-action="ColorSilver" asp-controller="Home">Sort By Color: Silver</a></p>
-    <p class="nav-item"><a asp-action="ColorRoseGold" asp-controller="Home">Sort By Color: RoseGold</a></p>
-    <p class="nav-item"><a asp-action="FilterMens" asp-controller="Home">Mens Watches</a></p>
-    <p class="nav-item"><a asp-action="FilterWomens" asp-controller="Home">Womens Watches</a></p>
-    <p class="nav-item"><a asp-action="FilterUnisex" asp-controller="Home">Unisex Watches</a></p>
-    <p class="nav-item"><a asp-action="FilterSmall" asp-controller="Home">Small Watches</a></p>
-    <p class="nav-item"><a asp-action="FilterMedium" asp-controller="Home">Medium Watches</a></p>
-    <p class="nav-item"><a asp-action="FilterLarge" asp-controller="Home">Large Watches</a></p>
-    <p class="nav-item"><a asp-action="MaterialGold" asp-controller="Home">Gold Watches</a></p>
-    <p class="nav-item"><a asp-action="MaterialTitanium" asp-controller="Home">Titanium Watches</a></p>
-    <p class="nav-item"><a asp-action="MaterialStainlessSteel" asp-controller="Home">Stainless Steel Watches</a></p>
-    <p class="nav-item"><a asp-action="MaterialCarbonFiber" asp-controller="Home">Carbon Fiber Watches</a></p>
-    <p class="nav-item"><a asp-action="MaterialCeramic" asp-controller="Home">Ceramic Watches</a></p>
-    <p class="nav-item"><a asp-action="MaterialRubberSilicone" asp-controller="Home">Rubber/Silicone Watches</a></p>
-</nav>
 <div class="container">
     @foreach ( var w in Model)
     {
@@ -201,7 +190,7 @@ function showSlides(n) {
                 <p>@w.Material</p>
                 <p>@w.Gender</p>
                 <p>@w.Size</p>
-                <button type="submit" class="btn btn-success btn-small">Add to cart</button>
+                <button type="submit" class="btn btn-small">Add to cart</button>
             </div>
         </div>
     }
