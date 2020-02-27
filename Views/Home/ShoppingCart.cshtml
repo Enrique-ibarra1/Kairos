@@ -1,4 +1,5 @@
 
+@Model List<Cart>
 @using Microsoft.Extensions.Options
 @* kairos.data was removed from line below beause of namespace issues *@
 @inject IOptions<Kairos.StripeSetting> Stripe
@@ -27,3 +28,9 @@
     </div> 
 
     @* <h1>@ViewBag.UserId.'s Shopping Cart</h1>  *@<h1>This is the shopping cart page</h1>
+
+<h1>Shopping Cart sums</h1>
+@foreach (var w in Model)
+{
+    <p>@w.Price</p>
+}
