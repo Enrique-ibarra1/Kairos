@@ -50,11 +50,13 @@ namespace Kairos.Controllers
 
             var charge = charges.Create(new ChargeCreateOptions
             {
-                Amount = (long?)CartAmount, 
+                Amount = Convert.ToInt64(CartAmount), 
                 Description = "Test Payment",
                 Currency = "usd",
                 Customer = customer.Id
             });
+            Console.WriteLine("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$444");
+            Console.WriteLine(charge.Amount);
 
             if (charge.Status == "succeeded")
             {
@@ -87,6 +89,15 @@ namespace Kairos.Controllers
             if(HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart") != null)
             {
                 List<Watch> Cart = HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart");
+                Cart.ToList().ForEach( w => w.Price = Convert.ToInt64(w.Price) );
+                foreach( var w in Cart)
+                {
+                    long price = Convert.ToInt64(w.Price);
+                    w.Price = price;
+                    Console.WriteLine(w.Price.GetType());
+                }
+                
+                
                 // ViewBag.UserCart = Cart;
                 return View("ShoppingCart", Cart);
             }
