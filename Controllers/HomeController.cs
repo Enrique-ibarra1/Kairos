@@ -8,8 +8,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Kairos.Models;
-
 // pattybranch added the below using statement
+using Stripe;
+
 
 
 namespace Kairos.Controllers
@@ -34,23 +35,32 @@ namespace Kairos.Controllers
 // Pattybranch added these for the stripe: New Method to take in 2 parameters
         public IActionResult Charge(string stripeEmail, string stripeToken)
         {
-            // var customerService = new StripeCustomerService();
-            // var chargeService = new StripeChargeService();
+            var customers = new CustomerService();
+            var charges = new ChargeService();
 
-            // var customer = customerService.Create(new StripeCustomerCreateOptions 
-            // {
-            //     EmailTokenProvider = stripeEmail,
-            //     SourceToken = stripeToken
-            // });
+            var customer = customers.Create(new CustomerCreateOptions {
+                Email = stripeEmail,
+                Source= stripeToken
+            });
 
-            // var charge = chargeService.Create(new StripeChargeCreateOptions 
-            // {
-            //     Amount = 500, 
-            //     MonitoringDescriptionAttribute = "",
-            //     Currency = "usd",
-            //     CustomerTaxIdDataOptions = customer.Id
-            // });
+            var charge = charges.Create(new ChargeCreateOptions
+            {
+                Amount = 500, 
+                Description = "Test Payment",
+                Currency = "usd",
+                Customer = customer.Id
+            });
 
+            if (charge.Status == "succeeded")
+            {
+                string BalanceTransactionId = charge.BalanceTransactionId;
+                return View();
+            }
+            else
+            {
+                
+            }
+            
             return View();
         }
 
@@ -80,7 +90,8 @@ namespace Kairos.Controllers
         [HttpGet("watch/{watchid}")]
         public IActionResult ShowWatch(int watchID)
         {
-            return View("SHOW");
+            Watch thisWatch = dbContext.Watches.FirstOrDefault(w => w.WatchId == watchID);
+            return View("ShowWatch", thisWatch);
         }
         [HttpGet("addtocart/{watchid}")]
         public IActionResult AddToCart(int watchID)

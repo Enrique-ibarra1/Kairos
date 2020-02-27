@@ -1,7 +1,6 @@
 
-<img src="~/images/banner.jpg" class="banner" alt="Banner not available">
-
 @model List<Watch>
+<img src="~/images/banner.jpg" class="banner" alt="Banner not available">
 <h1 style="color: #841a15;">Shop Page</h1>
 
     <nav class="navbar navbar-expand-sm navbar-dark justify-content-center">
@@ -180,7 +179,9 @@ function showSlides(n) {
     {
         <div class="card watchcard">
             <div class="card-header">
-                <h3>@w.Name</h3>
+                <a asp-action="ShowWatch" asp-controller="Home" asp-route-watchId="@w.WatchId">
+                    <h3>@w.Name</h3>
+                </a>
                 <img src="~/images/@w.ImageUrl">
             </div>
             <div class="card-body">
@@ -192,7 +193,9 @@ function showSlides(n) {
                 <p>@w.Material</p>
                 <p>@w.Gender</p>
                 <p>@w.Size</p>
-                <button type="submit" class="btn btn-small">Add to cart</button>
+                <a asp-action="AddToCart" asp-controller="Home" asp-route-watchId="@w.WatchId">
+                    <button type="submit" class="btn btn-small">Add to cart</button>
+                </a>
             </div>
         </div>
     }
