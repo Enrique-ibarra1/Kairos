@@ -27,9 +27,9 @@
         <a asp-action="Home">Home</a>  |  <a href="Logout">Logout</a>
     </div> 
 
-    @* <h1>@ViewBag.UserId.'s Shopping Cart</h1>  *@<h1>This is the shopping cart page</h1>
+    @* <h1>@ViewBag.UserId.'s Shopping Cart</h1>  *@<h3>This is the shopping cart page</h3>
 
-<h1>Shopping Cart sums</h1>
+<h3>Shopping Cart sums</h3>
 @foreach (var w in Model)
 {
     <p>@w.Price</p>
