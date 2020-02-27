@@ -219,8 +219,8 @@ a:hover{
 .img-zoom-result {
   border: 1px solid #d4d4d4;
   /*set the size of the result div:*/
-  width: 500px;
-  height: 500px;
+  width: 330px;
+  height: 330px;
 }
 
 .monospaced{
@@ -245,4 +245,8 @@ body{
 .active,
 .demo:hover {
   opacity: 1;
+}
+
+h3{
+  color: #287a71;
 }
