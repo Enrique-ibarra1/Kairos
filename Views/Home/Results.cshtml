@@ -86,7 +86,9 @@
                 <p>@w.Material</p>
                 <p>@w.Gender</p>
                 <p>@w.Size</p>
-                <button type="submit" class="btn btn-small">Add to cart</button>
+                <a asp-action="AddToCart" asp-controller="Home" asp-route-watchId="@w.WatchId">
+                    <button type="submit" class="btn btn-small">Add to cart</button>
+                </a>
             </div>
         </div>
     }
