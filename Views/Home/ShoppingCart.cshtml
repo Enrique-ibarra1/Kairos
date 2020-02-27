@@ -1,5 +1,35 @@
+
 @Model List<Cart>
-<h1>This is the shopping cart page</h1>
+@using Microsoft.Extensions.Options
+@* kairos.data was removed from line below beause of namespace issues *@
+@inject IOptions<Kairos.StripeSetting> Stripe
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<div class="text-center">
+
+    <form asp-action="Charge" asp-controller="Home" method="POST">
+        <article>
+            <label> Amount: $5.00</label>
+        </article>
+        <script src="//checkout.stripe.com/v2/checkout.js" 
+                class="stripe-button" 
+                data-key="@Stripe.Value.PublishableKey"
+                data-locale="auto"
+                data-description="Sample Charge"
+                data-amount="500">
+        </script>
+    </form>
+</div>
+
+<div class="container">
+    <div class="navbar">
+        <a asp-action="Home">Home</a>  |  <a href="Logout">Logout</a>
+    </div> 
+
+    @* <h1>@ViewBag.UserId.'s Shopping Cart</h1>  *@<h1>This is the shopping cart page</h1>
+
+<h1>Shopping Cart sums</h1>
 @foreach (var w in Model)
 {
     <p>@w.Price</p>
