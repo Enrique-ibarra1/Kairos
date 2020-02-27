@@ -16,20 +16,16 @@ body{
   display: flex;
 }
 
-label{
+label, h2, p{
   color: #f2ce80;
 }
 
-select{
+select, h1{
   color: #841a15;
 }
 
-h1{
-  color: #841a15;
-}
-
-h2{
-  color: #f2ce80;
+h3{
+  color: #287a71;
 }
 
 a{
@@ -227,17 +223,10 @@ a:hover{
   font-family: "Ubuntu Mono", monospaced;
 }
 
-body{
-  background-color: black;
-}
-
 .row{
   color: burlywood;
 }
 
-body{
-  background-color: black;
-}
 .demo.cursor{
   max-height: 107px;;
 }
@@ -245,4 +234,30 @@ body{
 .active,
 .demo:hover {
   opacity: 1;
+}
+
+/*THE TICKING K*/
+
+
+/* .clock {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+  padding: 2rem;
+} */
+
+.hand {
+  position: absolute;
+  /* transform-origin: 100%; */
+  width: 30px;
+  transform: rotate(90deg);
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  left:464px;
+  background-color: transparent;
+}
+
+.ticker {
+  position: relative;
 }

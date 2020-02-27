@@ -64,11 +64,15 @@ namespace Kairos.Controllers
             return View();
         }
 
-
         [HttpGet("shop")]
         public IActionResult Shop()
         {
             List<Watch> WatchInventory = dbContext.Watches.ToList();
+
+            List<Watch> HeadlineWatches = dbContext.Watches.Where(w => w.ImageUrl == "watch20.jpg" || w.ImageUrl == "watch17.jpg" || w.ImageUrl == "watch18.jpg" || w.ImageUrl == "watch19.jpg" || w.ImageUrl == "watch23.jpg" || w.ImageUrl == "watch21.jpg").ToList();
+
+            ViewBag.HeadlineWatches = HeadlineWatches;
+
             return View(WatchInventory);
         }
         [HttpGet("results")]
@@ -118,6 +122,7 @@ namespace Kairos.Controllers
             Console.WriteLine("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
             return View("ShowWatch/{watchId}", "Home");
         }
+
         [HttpGet("lowhigh")]
         public IActionResult PriceLowHigh()
         {

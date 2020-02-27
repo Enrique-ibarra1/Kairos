@@ -1,5 +1,5 @@
-
 @model List<Watch>
+
 <img src="~/images/banner.jpg" class="banner" alt="Banner not available">
 <h1 style="color: #841a15;">Shop Page</h1>
 
@@ -113,27 +113,27 @@
 <!-- Thumbnail images -->
     <div class="row mx-auto">
         <div class="column">
-            <img class="demo cursor" src="~/images/watch20.jpg" style="width:100%" onclick="currentSlide(1)" alt="Display Name">
+            <img class="demo cursor" src="~/images/watch20.jpg" style="width:100%" onclick="currentSlide(1)" asp-controller="Home"  alt="aisljdfbaisdiasudghashidbf">
         </div>
 
         <div class="column"> 
-            <img class="demo cursor" src="~/images/watch17.jpg" style="width:100%" onclick="currentSlide(2)" alt="Display Name">
+            <img class="demo cursor" src="~/images/watch17.jpg" style="width:100%" onclick="currentSlide(2)" asp-controller="Home"  alt="Display Name">
         </div>
 
         <div class="column">
-            <img class="demo cursor" src="~/images/watch18.jpg" style="width:100%" onclick="currentSlide(3)" alt="Display Name">
+            <img class="demo cursor" src="~/images/watch18.jpg" style="width:100%" onclick="currentSlide(3)" asp-controller="Home"  alt="Display Name">
         </div>
 
         <div class="column">
-            <img class="demo cursor" src="~/images/watch19.jpg" style="width:100%" onclick="currentSlide(4)" alt="Display Name">
+            <img class="demo cursor" src="~/images/watch19.jpg" style="width:100%" onclick="currentSlide(4)" asp-controller="Home"  alt="Display Name">
         </div>
 
         <div class="column">
-            <img class="demo cursor" src="~/images/watch21.jpg" style="width:100%" onclick="currentSlide(5)" alt="Display Name">
+            <img class="demo cursor" src="~/images/watch21.jpg" style="width:100%" onclick="currentSlide(5)" asp-controller="Home"  alt="Display Name">
         </div> 
 
         <div class="column">
-            <img class="demo cursor" src="~/images/watch23.jpg" style="width:100%" onclick="currentSlide(6)" alt="Display Name">
+            <img class="demo cursor" src="~/images/watch23.jpg" style="width:100%" onclick="currentSlide(6)" asp-controller="Home"  alt="Display Name">
         </div>
     </div>
 </div>
@@ -179,7 +179,7 @@ function showSlides(n) {
     {
         <div class="card watchcard">
             <div class="card-header">
-                <a asp-action="ShowWatch" asp-controller="Home" asp-route-watchId="@w.WatchId">
+                <a asp-action="ShowWatch" asp-controller="Home" asp-route-watchId="@w.WatchId" style="hover: none;">
                     <h3>@w.Name</h3>
                 </a>
                 <img src="~/images/@w.ImageUrl">
