@@ -1,59 +1,200 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿
+* {
+  box-sizing: border-box;
+  background-color: #1b201a;
+  font-family: 'Carrois Gothic SC';
+  font-weight: bolder;
+  font-size: large;
+}
 
-a.navbar-brand {
-  white-space: normal;
+body{
+  background-color: #1b201a;
+}
+
+.banner{
+  max-width: 1110px;
+  display: flex;
+}
+
+label{
+  color: #f2ce80;
+}
+
+select{
+  color: #841a15;
+}
+
+h1{
+  color: #841a15;
+}
+
+h2{
+  color: #f2ce80;
+}
+
+a{
+  color: #287a71;
+  padding: 5px;
+}
+
+a:hover{
+  text-decoration: none;
+  color: #1b201a;
+  background-color: #287a71;
+  padding: 5px;
+}
+
+.dropdown-item{
   text-align: center;
-  word-break: break-all;
+  background-color: #1b201a;
+  padding: 2px 16px;
+  color: #287a71;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.dropdown-menu{
+  text-align: center;
+  background-color: #1b201a;
+  padding: 2px 16px;
+  color: #287a71;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+.dropdown-menu:hover{
+  text-decoration: none;
+  color: #1b201a;
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+.dropdown-item:hover{
+  text-decoration: none;
+  color: #1b201a;
+  background-color: #287a71;
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+.nav-item{
+  margin: 0px 20px;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
+/* Position the image container (needed to position the left and right arrows) */
+.container {
   position: relative;
-  min-height: 100%;
+  background-color: #1b201a;
+  border: 1px solid  #f2ce80;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+/* Hide the images by default */
+.mySlides {
+  display: none;
 }
-.footer {
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: #287a71;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
 }
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: #1b201a;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #287a71;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.card-header{
+  background-color: #1b201a;
+}
+
+.card{
+  color:#f2ce80;
+  display: inline-block;
+  max-width: 355px;
+  max-height: 500px;
+}
+
+.card img {
+  width:100%;
+}
+
+.card-footer{
+  color:#f2ce80;
+  background-color: #1b201a;
+}
+
+.caption{
+  font-family: 'Carrois Gothic SC';
+  color: #287a71;
+}
+
+.btn-small{
+  color:  #287a71;
+  font-weight: bold;
+  border: 1px solid #841a15;
+  border-radius: 0;
+}
+
+.btn{
+  color:  #287a71;
+  font-weight: bold;
+  border: 1px solid #841a15;
+  border-radius: 0;
+  background-color: none;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #1b201a;
+  padding: 2px 16px;
+  color: #287a71;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+  height: 150px;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+  width: 100%;
+}
+
 
 .img-zoom-container {
   position: relative;
@@ -88,4 +229,12 @@ body{
 
 body{
   background-color: black;
+}
+.demo.cursor{
+  max-height: 107px;;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
 }

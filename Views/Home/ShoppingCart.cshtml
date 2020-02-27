@@ -1,1 +1,6 @@
+@Model List<Cart>
 <h1>This is the shopping cart page</h1>
+@foreach (var w in Model)
+{
+    <p>@w.Price</p>
+}

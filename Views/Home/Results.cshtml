@@ -1,1 +1,93 @@
-<h1>This is the search results page, where each watch comes up in a card style format</h1>
+@model List<Watch> 
+
+<img src="~/images/banner.jpg" class="banner" alt="Banner not available">
+
+<h1 style="color: #841a15;">Results Page</h1>
+
+    <nav class="navbar navbar-expand-sm navbar-dark justify-content-center">
+        <!-- Links -->
+        <ul class="navbar-nav">
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+            <a class=" dropdown-toggle font-weight-bold" href="#" id="navbardrop" data-toggle="dropdown">
+            Style
+            </a>
+            <div class="dropdown-menu  font-weight-bold">
+                <a class="dropdown-item font-weight-bold" asp-controller="Home" asp-action="FilterMens">Mens</a>
+                <a class="dropdown-item font-weight-bold" asp-controller="Home" asp-action="FilterWomens">Womens</a>
+                <a class="dropdown-item font-weight-bold" asp-controller="Home" asp-action="FilterUnisex">Unisex</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class=" dropdown-toggle font-weight-bold" href="#" id="navbardrop" data-toggle="dropdown">
+            Price
+            </a>
+            <div class="dropdown-menu  font-weight-bold">
+                <a class="dropdown-item font-weight-bold" asp-controller="Home" asp-action="PriceLowHigh">Lowest to Highest</a>
+                <a class="dropdown-item font-weight-bold" asp-controller="Home" asp-action="PriceHighLow">Highest to Lowest</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class=" dropdown-toggle font-weight-bold" href="#" id="navbardrop" data-toggle="dropdown">
+            Color
+            </a>
+            <div class="dropdown-menu  font-weight-bold">
+                <a class="dropdown-item font-weight-bold" asp-action="ColorGold" asp-controller="Home">Gold</a>
+                <a class="dropdown-item font-weight-bold" asp-action="ColorSilver" asp-controller="Home">Silver</a>
+                <a class="dropdown-item font-weight-bold" asp-action="ColorBlack" asp-controller="Home">Black</a>
+                <a class="dropdown-item font-weight-bold" asp-action="ColorRoseGold" asp-controller="Home">Rose Gold</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class=" dropdown-toggle font-weight-bold" href="#" id="navbardrop" data-toggle="dropdown">
+            Material
+            </a>
+            <div class="dropdown-menu ">
+                <a class="dropdown-item font-weight-bold" asp-action="MaterialGold" asp-controller="Home">Gold</a>
+                <a class="dropdown-item font-weight-bold" asp-action="MaterialTitanium" asp-controller="Home">Titanium</a>
+                <a class="dropdown-item font-weight-bold" asp-action="MaterialStainlessSteel" asp-controller="Home">Stainless Steel</a>
+                <a class="dropdown-item font-weight-bold" asp-action="MaterialCarbonFiber" asp-controller="Home">Carbon Fiber</a>
+                <a class="dropdown-item font-weight-bold" asp-action="MaterialCeramic" asp-controller="Home">Ceramic</a>
+                <a class="dropdown-item font-weight-bold" asp-action="MaterialRubberSilicone" asp-controller="Home">Rubber/Silicone</a>
+            </div>
+        </li>
+
+            <li class="nav-item dropdown">
+            <a class=" dropdown-toggle font-weight-bold" href="#" id="navbardrop" data-toggle="dropdown">
+            Size
+            </a>
+            <div class="dropdown-menu ">
+                <a class="dropdown-item font-weight-bold" asp-controller="Home">Small</a>
+                <a class="dropdown-item font-weight-bold" asp-controller="Home">Medium</a>
+                <a class="dropdown-item font-weight-bold" asp-controller="Home">Large</a>
+            </div>
+        </li>
+        </ul>
+    </nav>
+
+<div class="container">
+    @foreach ( var w in ViewBag.Results)
+    {
+        <div class="card" id="watchcard" style="display: inline;">
+            <div class="card-header">
+                <h3>@w.Name</h3>
+                <img src="~/images/@w.ImageUrl">
+            </div>
+            <div class="card-body">
+                <h4>By @w.Company</h4>
+                <h5>$@w.Price</h5>
+                <h4>Color: @w.Color</h4>
+                <p>@w.Description</p>
+            </div>
+            <div class="card-footer">
+                <p>@w.Material</p>
+                <p>@w.Gender</p>
+                <p>@w.Size</p>
+                <button type="submit" class="btn btn-small">Add to cart</button>
+            </div>
+        </div>
+    }
+</div>

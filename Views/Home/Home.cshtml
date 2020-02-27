@@ -1,6 +1,10 @@
-﻿@{
+﻿@using Microsoft.Extensions.Options
+@inject IOptions<StripeSetting> Stripe
+    
+@{
     ViewData["Title"] = "Home Page";
 }
+<img src="~/images/banner.jpg" class="banner" alt="Banner not available">
 
 <div class="text-center">
     <h1 class="display-4">Kairos</h1>
