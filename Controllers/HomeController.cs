@@ -37,7 +37,12 @@ namespace Kairos.Controllers
         {
             var customers = new CustomerService();
             var charges = new ChargeService();
-
+            List<Watch> UserCart = HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart");
+            double CartAmount = 0;
+            foreach (var w in UserCart)
+            {
+                CartAmount += w.Price;
+            }
             var customer = customers.Create(new CustomerCreateOptions {
                 Email = stripeEmail,
                 Source= stripeToken
@@ -45,7 +50,7 @@ namespace Kairos.Controllers
 
             var charge = charges.Create(new ChargeCreateOptions
             {
-                Amount = 500, 
+                Amount = (long?)CartAmount, 
                 Description = "Test Payment",
                 Currency = "usd",
                 Customer = customer.Id
@@ -82,7 +87,7 @@ namespace Kairos.Controllers
             if(HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart") != null)
             {
                 List<Watch> Cart = HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart");
-                ViewBag.Cart = Cart;
+                // ViewBag.UserCart = Cart;
                 return View("ShoppingCart", Cart);
             }
             return View();
