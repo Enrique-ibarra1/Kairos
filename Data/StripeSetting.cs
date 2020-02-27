@@ -1,3 +1,4 @@
+
 namespace Kairos
 {
     // This Holds Secret key & Publishable key that was put into appsetting.json
