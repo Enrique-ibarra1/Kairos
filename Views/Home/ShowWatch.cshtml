@@ -138,18 +138,29 @@ function imageZoom(imgID, resultID) {
         <div class="row">
             <div class="img-zoom-container">
                 @* "~/images/@Model.ImageUrl" *@
-                <img id="Watch" src="~/images/@Model.ImageUrl" height="500" width="500">
+                <img id="Watch" src="~/images/@Model.ImageUrl" height="330" width="330">
                 <div id="myresult" class="img-zoom-result"></div>
             </div>
                 <script>
                 imageZoom("Watch", "myresult");
                 </script>
             <div class="col-md-6">
-
-                <h1>Watch Id from ViewBag goes here</h1>
-                <h1>Description:</h1>
-                <p>Smart Watch, Social Media, Text Control Music. GooglePlay, GPS, Swimproof Accelerometer, 
-                Altimeter, Ambient Light, Gyroscope, Heart Rate, Microphone, NFC, Untethered GPS</p>
+                <h3>Name of Watch:</h3>
+                <p>@Model.Name</p>
+                <h3>Price of Watch:</h3>
+                <p>$@Model.Price</p>
+                <h3>Description:</h3>
+                <p>@Model.Description</p>
+                <h3>Color:</h3>
+                <p>@Model.Color</p>
+                <h3>Company:</h3>
+                <p>@Model.Company</p>
+                <h3>Material</h3>
+                <p>@Model.Material</p>
+                <h3>Size of Watch:</h3>
+                <p>@Model.Size</p>
+                <h3>Gender of Watch:</h3>
+                <p>@Model.Gender</p>
 
                 <div class="form-group">
                     <a asp-action="AddToCart" asp-controller="Home" asp-route-watchId="@Model.WatchId">
@@ -157,9 +168,6 @@ function imageZoom(imgID, resultID) {
                     </a>
                 </div>
 
-                <div class="form-group">
-                    <button class="btn btn-primary">Go to Checkout</button>
-                </div>
             </div>
         </div>
     </div>
