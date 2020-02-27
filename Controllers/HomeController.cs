@@ -69,11 +69,11 @@ namespace Kairos.Controllers
             return View();
         }
 
-
         [HttpGet("shop")]
         public IActionResult Shop()
         {
             List<Watch> WatchInventory = dbContext.Watches.ToList();
+
             return View(WatchInventory);
         }
         [HttpGet("results")]
@@ -123,6 +123,7 @@ namespace Kairos.Controllers
             Console.WriteLine("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
             return View("ShowWatch/{watchId}", "Home");
         }
+
         [HttpGet("lowhigh")]
         public IActionResult PriceLowHigh()
         {
