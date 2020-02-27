@@ -90,7 +90,8 @@ namespace Kairos.Controllers
         [HttpGet("watch/{watchid}")]
         public IActionResult ShowWatch(int watchID)
         {
-            return View("SHOW");
+            Watch thisWatch = dbContext.Watches.FirstOrDefault(w => w.WatchId == watchID);
+            return View("ShowWatch", thisWatch);
         }
         [HttpGet("addtocart/{watchid}")]
         public IActionResult AddToCart(int watchID)
