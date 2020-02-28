@@ -3,11 +3,8 @@
 @using Microsoft.Extensions.Options
 @* kairos.data was removed from line below beause of namespace issues *@
 @inject IOptions<Kairos.StripeSetting> Stripe
-
 <img src="~/images/banner.jpg" class="banner" alt="Banner not available">
 
-@* <link rel="stylesheet" type="text/css" href="css/example3.css" data-rel-css="" /> *@
-@* Stripe template stuff ends here *@
 
 @* ORIGINAL STRIPE --The SMALL ONE *@
 <div class="text-center">
@@ -15,8 +12,6 @@
     <div class="navbar">
         <a class="btn" asp-action="Shop">Back</a><a class="btn" href="Logout">Logout</a>
     </div> 
-
-@* ORIGINAL STRIPE --The SMALL ONE .  ENDS HERE *@
 
 <h1>Items in your shopping cart</h1>
 @if(Model.Count != 0)
