@@ -2,8 +2,6 @@
 
 <img src="~/images/banner.jpg" class="banner" alt="Banner not available">
 
-<h1 style="color: #841a15;">Results Page</h1>
-
     <nav class="navbar navbar-expand-sm navbar-dark justify-content-center">
         <!-- Links -->
         <ul class="navbar-nav">
@@ -71,7 +69,7 @@
 <div class="container">
     @foreach ( var w in ViewBag.Results)
     {
-        <div class="card" id="watchcard" style="display: inline;">
+        <div class="card watchcard">
             <div class="card-header">
                 <h3>@w.Name</h3>
                 <img src="~/images/@w.ImageUrl">

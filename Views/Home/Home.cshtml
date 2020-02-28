@@ -7,9 +7,27 @@
 <img src="~/images/banner.jpg" class="banner" alt="Banner not available">
 
 <div class="text-center">
-    <h1 class="display-4">Kairos</h1>
-    <p>Fancy stuff goes here oooooh</a>.</p>
-    <a asp-action="Login" asp-controller="Login">Login</a>
-    <a asp-action="Register" asp-controller="Login">Register</a>
-    <a asp-action="Shop" asp-controller="Home">Shop</a>
+    <div class="ticker">
+        <h1 class="hand second-hand">K</h1><h1 style="display: inline;">airos</h1><br>
+    </div>
+    
+    <p>Welcome to Kairos. Your one-stop online shop for all things watches. Feel free to create a login or shop as a guest where you'll be able to buy any watch that catches your eye.</a>.</p>
+    
+    <a class="card-hover" asp-action="Login" asp-controller="Login">Login</a>
+    <a class="card-hover" asp-action="Register" asp-controller="Login">Register</a>
+    <a class="card-hover" asp-action="Shop" asp-controller="Home">Shop</a>
 </div>
+
+<script>
+    const secondHand = document.querySelector('.second-hand');
+
+    function setDate() {
+        const now = new Date();
+        const seconds = now.getSeconds();
+        const secondsDegrees = ((seconds / 60) * 360) + 90;
+        secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+    }
+
+    setInterval(setDate, 1000);
+
+</script>

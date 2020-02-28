@@ -3,7 +3,7 @@
   box-sizing: border-box;
   background-color: #1b201a;
   font-family: 'Carrois Gothic SC';
-  font-weight: bolder;
+  /* font-weight: bolder; */
   font-size: large;
 }
 
@@ -16,32 +16,48 @@ body{
   display: flex;
 }
 
-label{
+label, h2, p{
   color: #f2ce80;
 }
 
-select{
+select, h1{
   color: #841a15;
 }
 
-h1{
-  color: #841a15;
-}
-
-h2{
-  color: #f2ce80;
+h3{
+  color: #287a71;
 }
 
 a{
   color: #287a71;
   padding: 5px;
+  text-decoration: none;
 }
 
-a:hover{
+nav a:hover{
   text-decoration: none;
   color: #1b201a;
   background-color: #287a71;
   padding: 5px;
+}
+
+.btn:hover{
+  text-decoration: none;
+  color: #1b201a;
+  background-color: #287a71;
+}
+
+.card-hover{
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.card-hover:hover{
+  text-decoration: none;
+  font-size: x-large;
+  font-weight: bolder;
+  color: #1b201a;
+  background-color: #287a71;
 }
 
 .dropdown-item{
@@ -105,20 +121,22 @@ a:hover{
   font-weight: bold;
   font-size: 20px;
   border-radius: 0 3px 3px 0;
+  border: 1px solid #f2ce80;
   user-select: none;
   -webkit-user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
-  border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
+.prev {
+  left: 0;
+}
+
 .prev:hover,
 .next:hover {
-  background-color: #1b201a;
+  background-color: #f2ce80;
 }
 
 /* Number text (1/3 etc) */
@@ -211,6 +229,7 @@ a:hover{
 .img-zoom-lens {
   position: absolute;
   border: 1px solid #d4d4d4;
+  background-color: transparent;
   /*set the size of the lens:*/
   width: 80px;
   height: 80px;
@@ -227,17 +246,10 @@ a:hover{
   font-family: "Ubuntu Mono", monospaced;
 }
 
-body{
-  background-color: black;
-}
-
 .row{
   color: burlywood;
 }
 
-body{
-  background-color: black;
-}
 .demo.cursor{
   max-height: 107px;;
 }
@@ -245,6 +257,31 @@ body{
 .active,
 .demo:hover {
   opacity: 1;
+}
+/*THE TICKING K*/
+
+
+/* .clock {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+  padding: 2rem;
+} */
+
+.hand {
+  position: absolute;
+  /* transform-origin: 100%; */
+  width: 30px;
+  transform: rotate(90deg);
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  left:464px;
+  background-color: transparent;
+}
+
+.ticker {
+  position: relative;
 }
 
 h3{
