@@ -37,7 +37,12 @@ namespace Kairos.Controllers
         {
             var customers = new CustomerService();
             var charges = new ChargeService();
-
+            List<Watch> UserCart = HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart");
+            double CartAmount = 0;
+            foreach (var w in UserCart)
+            {
+                CartAmount += w.Price;
+            }
             var customer = customers.Create(new CustomerCreateOptions {
                 Email = stripeEmail,
                 Source= stripeToken
@@ -45,11 +50,13 @@ namespace Kairos.Controllers
 
             var charge = charges.Create(new ChargeCreateOptions
             {
-                Amount = 500, 
+                Amount = Convert.ToInt64(CartAmount), 
                 Description = "Test Payment",
                 Currency = "usd",
                 Customer = customer.Id
             });
+            Console.WriteLine("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$444");
+            Console.WriteLine(charge.Amount);
 
             if (charge.Status == "succeeded")
             {
@@ -64,11 +71,11 @@ namespace Kairos.Controllers
             return View();
         }
 
-
         [HttpGet("shop")]
         public IActionResult Shop()
         {
             List<Watch> WatchInventory = dbContext.Watches.ToList();
+
             return View(WatchInventory);
         }
         [HttpGet("results")]
@@ -82,7 +89,16 @@ namespace Kairos.Controllers
             if(HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart") != null)
             {
                 List<Watch> Cart = HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart");
-                ViewBag.Cart = Cart;
+                Cart.ToList().ForEach( w => w.Price = Convert.ToInt64(w.Price) );
+                foreach( var w in Cart)
+                {
+                    long price = Convert.ToInt64(w.Price);
+                    w.Price = price;
+                    Console.WriteLine(w.Price.GetType());
+                }
+                
+                
+                // ViewBag.UserCart = Cart;
                 return View("ShoppingCart", Cart);
             }
             return View();
@@ -90,7 +106,8 @@ namespace Kairos.Controllers
         [HttpGet("watch/{watchid}")]
         public IActionResult ShowWatch(int watchID)
         {
-            return View("SHOW");
+            Watch thisWatch = dbContext.Watches.FirstOrDefault(w => w.WatchId == watchID);
+            return View("ShowWatch", thisWatch);
         }
         [HttpGet("addtocart/{watchid}")]
         public IActionResult AddToCart(int watchID)
@@ -117,6 +134,7 @@ namespace Kairos.Controllers
             Console.WriteLine("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
             return View("ShowWatch/{watchId}", "Home");
         }
+
         [HttpGet("lowhigh")]
         public IActionResult PriceLowHigh()
         {

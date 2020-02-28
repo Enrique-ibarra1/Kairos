@@ -1,5 +1,5 @@
 
-@Model List<Cart>
+@model List<Watch>
 @using Microsoft.Extensions.Options
 @* kairos.data was removed from line below beause of namespace issues *@
 @inject IOptions<Kairos.StripeSetting> Stripe
@@ -36,14 +36,19 @@
 
     <form asp-action="Charge" asp-controller="Home" method="POST">
         <article>
-            <label> Amount: $5.00</label>
+        @{double amount =0;}
+        @foreach (var w in Model)
+        {
+            amount += @w.Price;
+        }
+        <label> Amount: @amount</label>
         </article>
         <script src="//checkout.stripe.com/v2/checkout.js" 
                 class="stripe-button" 
                 data-key="@Stripe.Value.PublishableKey"
                 data-locale="auto"
                 data-description="Sample Charge"
-                data-amount="500">
+                data-amount="@amount">
         </script>
     </form>
 </div>
@@ -126,10 +131,19 @@
 
 
 
-    @* <h1>@ViewBag.UserId.'s Shopping Cart</h1>  *@<h1>This is the shopping cart page</h1>
 
-<h1>Shopping Cart sums</h1>
-@foreach (var w in Model)
-{
-    <p>@w.Price</p>
-}
+<h1>Items in your shopping cart</h1>
+    @foreach (var w in Model)
+    {
+        <div class="row">
+            <h5>@w.Name</h5>
+            <p>-</p>
+            <h6>$@w.Price</h6>
+            <div class="col-3">
+                <a asp-action="Remove" asp-controller="Home">
+                    <button type="submit" class="btn btn-danger">remove from cart</button>
+                </a>
+            </div>
+        </div><br>
+    }
+
