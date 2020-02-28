@@ -32,7 +32,7 @@ namespace Kairos.Controllers
             return View("Home");
         }
 
-// Pattybranch added these for the stripe: New Method to take in 2 parameters
+// Pattybranch added these for the stripe: New Method to take in 2 parameters in order to process the payment
         public IActionResult Charge(string stripeEmail, string stripeToken)
         {
             var customers = new CustomerService();
