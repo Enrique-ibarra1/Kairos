@@ -96,12 +96,12 @@ namespace Kairos.Controllers
                     w.Price = price;
                     Console.WriteLine(w.Price.GetType());
                 }
-                
-                
-                // ViewBag.UserCart = Cart;
                 return View("ShoppingCart", Cart);
             }
-            return View();
+            else
+            {
+                return View("Shop");
+            }
         }
         [HttpGet("watch/{watchid}")]
         public IActionResult ShowWatch(int watchID)
@@ -133,6 +133,24 @@ namespace Kairos.Controllers
             }
             Console.WriteLine("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
             return View("ShowWatch/{watchId}", "Home");
+        }
+        [HttpGet("remove/{watchId}")]
+        public IActionResult Remove(int watchID)
+        {
+            Watch thisWatch = dbContext.Watches.FirstOrDefault(w => w.WatchId == watchID);
+            if(HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart") != null)
+            {
+                List<Watch> Cart = HttpContext.Session.GetObjectFromJson<List<Watch>>("UserCart");
+                var itemToRemove = Cart.Single(w => w.WatchId == watchID);
+                Cart.Remove(itemToRemove);
+                HttpContext.Session.SetObjectAsJson("UserCart", Cart);
+                ViewBag.Cart = Cart;
+                return RedirectToAction("ShoppingCart", "Home");
+            }
+            else
+            {
+                return RedirectToAction("ShoppingCart", "Home");
+            }
         }
 
         [HttpGet("lowhigh")]
