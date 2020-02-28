@@ -1,11 +1,10 @@
 @model List<Watch>
 
 <img src="~/images/banner.jpg" class="banner" alt="Banner not available">
-<a asp-action="Index" asp-controller="Home">Home</a>
-<a asp-action="ShoppingCart" asp-controller="Home">Cart</a>
     <nav class="navbar navbar-expand-sm navbar-dark justify-content-center">
         <!-- Links -->
         <ul class="navbar-nav">
+            <a class="btn" asp-action="Index" asp-controller="Home">Back to Homepage</a>
         <!-- Dropdown -->
         <li class="nav-item dropdown">
             <a class=" dropdown-toggle font-weight-bold" href="#" id="navbardrop" data-toggle="dropdown">
@@ -65,6 +64,7 @@
             </div>
         </li>
         </ul>
+            <a class="btn" asp-action="ShoppingCart" asp-controller="Home">View Shopping Cart</a>
     </nav>
 
     <div></div>
