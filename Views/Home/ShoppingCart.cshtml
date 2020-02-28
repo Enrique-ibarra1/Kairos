@@ -4,9 +4,32 @@
 @* kairos.data was removed from line below beause of namespace issues *@
 @inject IOptions<Kairos.StripeSetting> Stripe
 
+<img src="~/images/banner.jpg" class="banner" alt="Banner not available">
+
+
+<div class="container">
+    <div class="navbar">
+        <a class="btn" asp-action="Shop">Back</a><a class="btn" href="Logout">Logout</a>
+    </div> 
+
+<h2>Items in your shopping cart:</h2>
+    <div>
+    @foreach (var w in Model)
+    {
+        <div class="row text-center" style="padding-left: 30px;">
+            <p>@w.Name</p>
+            <p> - </p>
+            <p>$@w.Price</p><br>
+            <div class="col-3">
+                <a asp-action="Remove" asp-controller="Home">
+                    <button type="submit" class="btn">remove from cart</button>
+                </a>
+            </div>
+        </div><br>
+    }
+    </div>
 
 <div class="text-center">
-
     <form asp-action="Charge" asp-controller="Home" method="POST">
         <article>
         @{double amount =0;}
@@ -14,7 +37,7 @@
         {
             amount += @w.Price;
         }
-        <label> Amount: @amount</label>
+        <label> Amount: $@amount</label>
         </article>
         <script src="//checkout.stripe.com/v2/checkout.js" 
                 class="stripe-button" 
@@ -25,24 +48,3 @@
         </script>
     </form>
 </div>
-
-<div class="container">
-    <div class="navbar">
-        <a asp-action="Shop">Back</a>  |  <a href="Logout">Logout</a>
-    </div> 
-
-<h1>Items in your shopping cart</h1>
-    @foreach (var w in Model)
-    {
-        <div class="row">
-            <h5>@w.Name</h5>
-            <p>-</p>
-            <h6>$@w.Price</h6>
-            <div class="col-3">
-                <a asp-action="Remove" asp-controller="Home">
-                    <button type="submit" class="btn btn-danger">remove from cart</button>
-                </a>
-            </div>
-        </div><br>
-    }
-

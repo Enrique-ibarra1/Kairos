@@ -71,7 +71,7 @@
     {
         <div class="card watchcard">
             <div class="card-header">
-                <h3>@w.Name</h3>
+                <a class="card-hover" asp-action="ShowWatch" asp-controller="Home" asp-route-watchId="@w.WatchId">@w.Name</a>
                 <img src="~/images/@w.ImageUrl">
             </div>
             <div class="card-body">
