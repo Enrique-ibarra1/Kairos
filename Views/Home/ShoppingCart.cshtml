@@ -3,13 +3,16 @@
 @using Microsoft.Extensions.Options
 @* kairos.data was removed from line below beause of namespace issues *@
 @inject IOptions<Kairos.StripeSetting> Stripe
-@* Stripe template stuff ends here *@
+<img src="~/images/banner.jpg" class="banner" alt="Banner not available">
 
+
+@* ORIGINAL STRIPE --The SMALL ONE *@
+<div class="text-center">
 <div class="container">
     <div class="navbar">
-        <a asp-action="Home">Home</a>  |  <a href="Logout">Logout</a>
+        <a class="btn" asp-action="Shop">Back</a><a class="btn" href="Logout">Logout</a>
     </div> 
-</div>
+
 <h1>Items in your shopping cart</h1>
 @if(Model.Count != 0)
 {
@@ -21,7 +24,7 @@
             <h6>$@w.Price</h6>
             <div class="col-3">
                 <a asp-action="Remove" asp-controller="Home" asp-route-watchID="@w.WatchId">
-                    <button type="submit" class="btn btn-danger">remove from cart</button>
+                    <button type="submit" class="btn">remove from cart</button>
                 </a>
             </div>
         </div><br>
@@ -31,9 +34,7 @@ else
 {
     <h2>You dont have any items in your cart</h2>
 }
-@* ORIGINAL STRIPE --The SMALL ONE *@
 <div class="text-center">
-
     <form asp-action="Charge" asp-controller="Home" method="POST">
         <article>
         @{double amount =0;}
@@ -41,7 +42,7 @@ else
         {
             amount += @w.Price;
         }
-        <label> Amount: @amount</label>
+        <label> Amount: $@amount</label>
         </article>
         <script src="//checkout.stripe.com/v2/checkout.js" 
                 class="stripe-button" 
@@ -52,4 +53,3 @@ else
         </script>
     </form>
 </div>
-@* ORIGINAL STRIPE --The SMALL ONE .  ENDS HERE *@
