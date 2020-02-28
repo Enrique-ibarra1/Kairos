@@ -229,6 +229,7 @@ nav a:hover{
 .img-zoom-lens {
   position: absolute;
   border: 1px solid #d4d4d4;
+  background-color: transparent;
   /*set the size of the lens:*/
   width: 80px;
   height: 80px;
@@ -281,6 +282,8 @@ nav a:hover{
 
 .ticker {
   position: relative;
+}
+
 h3{
   color: #287a71;
 }
