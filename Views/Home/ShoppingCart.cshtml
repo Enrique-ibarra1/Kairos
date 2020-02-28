@@ -5,7 +5,7 @@
 @inject IOptions<Kairos.StripeSetting> Stripe
 
 @* Stripe Template stuff starts here  *@
-<title data-tid="elements_examples.meta.title">Stripe Elements: Build beautiful, smart checkout flows</title>
+@* <title data-tid="elements_examples.meta.title">Stripe Elements: Build beautiful, smart checkout flows</title>
 <meta data-tid="elements_examples.meta.description" name="description" content="Build beautiful, smart checkout flows.">
 
 <link rel="shortcut icon" href="img/favicon.ico">
@@ -17,13 +17,13 @@
 
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet"> *@
 
 <link rel="stylesheet" type="text/css" href="css/base.css" data-rel-css="" />
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-<link rel="stylesheet" type="text/css" href="css/example3.css" data-rel-css="" />
+@* <link rel="stylesheet" type="text/css" href="css/example3.css" data-rel-css="" /> *@
 @* Stripe template stuff ends here *@
 
 <div class="container">
@@ -52,24 +52,24 @@
         </script>
     </form>
 </div>
+
 @* ORIGINAL STRIPE --The SMALL ONE .  ENDS HERE *@
 
 
     @* Stripe Language stuff below *@
-<div class="globalContent">
+@* <div class="globalContent">
     <main>
     <div class="stripes">
     <div class="stripe s3"></div>
     </div>
     <section class="container">
         <li role="tab">
-            <a data-lang="en">
-            English
+            <a data-locale="auto">
             </a>
         </li>
 </div>
-<h1 data-tid="elements_examples.intro.title" class="common-SuperTitle">Stripe Elements examples</h1>
-        <p data-tid="elements_examples.intro.subtitle" class="common-IntroText">Stripe Elements are pre-built rich UI components that help you build your own pixel-perfect checkout flows across desktop and&nbsp;mobile.</p>
+<h1 data-tid="elements_examples.intro.title" class="common-SuperTitle">Check Out</h1>
+        <p data-tid="elements_examples.intro.subtitle" class="common-IntroText">Please enter your credit card information</p>
         <p class="common-ButtonGroup">
         <a data-tid="elements_examples.intro.button_learn_more" href="https://stripe.com/elements" class="common-Button common-Button--default">
         Check-Out
@@ -80,13 +80,14 @@
         @* Strip Language stuff ends here *@
 
 <!--Example 3 starts here-->
-    <div class="cell example example3" id="example-3">
+    @* <div class="cell example example3" id="example-3">
         <form>
         <div class="fieldset">
             <input id="example3-name" data-tid="elements_examples.form.name_label" class="field" type="text" placeholder="Name" required="" autocomplete="name">
-            <input id="example3-email" data-tid="elements_examples.form.email_label" class="field half-width" type="email" placeholder="Email" required="" autocomplete="email">
+            <input id="example3-email" data-tid="elements_examples.form.email_label" class="field half-width" type="email" placeholder="Email" required="" autocomplete="email"> *@
             @* <input id="example3-phone" data-tid="elements_examples.form.phone_label" class="field half-width" type="tel" placeholder="Phone" required="" autocomplete="tel"> *@
-            <input id="example3-card-number" class="field empty"/>
+            
+            @* <input id="example3-card-number" class="field empty"/>
             <input id="example3-card-expiry" class="field empty third-width"/>
             <input id="example3-card-cvc" class="field empty third-width"/>
         </div>
@@ -101,8 +102,8 @@
         <div class="icon">
             <svg width="84px" height="84px" viewBox="0 0 84 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <circle class="border" cx="42" cy="42" r="40" stroke-linecap="round" stroke-width="4" stroke="#000" fill="none"></circle>
-            <path class="checkmark" stroke-linecap="round" stroke-linejoin="round" d="M23.375 42.5488281 36.8840688 56.0578969 64.891932 28.0500338" stroke-width="4" stroke="#000" fill="none"></path>
-            </svg>
+            <path class="checkmark" stroke-linecap="round" stroke-linejoin="round" d="M23.375 42.5488281 36.8840688 56.0578969 64.891932 28.0500338" stroke-width="4" stroke="#000" fill="none"></path> *@
+            @* </svg>
         </div>
         <h3 class="title" data-tid="elements_examples.success.title">Payment successful</h3>
         <a class="reset" href="Success">
@@ -112,15 +113,15 @@
         </a>
         </div>
 
-    </div>
+    </div> *@
 <!--Example 3 ends here-->
 
 
 <!-- Simple localization script for Stripe's examples page. -->
-<script src="js/l10n.js" data-rel-js></script>
+@* <script src="js/l10n.js" data-rel-js></script> *@
 
 <!-- Scripts for each example: -->
-<script src="js/example3.js" data-rel-js></script>
+@* <script src="js/example3.js" data-rel-js></script>  *@
 
 
 
@@ -141,7 +142,7 @@
             <h6>$@w.Price</h6>
             <div class="col-3">
                 <a asp-action="Remove" asp-controller="Home">
-                    <button type="submit" class="btn btn-danger">remove from cart</button>
+                    <button type="submit" class="btn">remove from cart</button>
                 </a>
             </div>
         </div><br>
